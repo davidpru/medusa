@@ -185,7 +185,7 @@ function prepareCancelOrderFulfillmentData({
           (i) => i.inventory.id === fitem.inventory_item_id
         )
 
-        quantity = MathBN.div(quantity, iitem!.required_quantity)
+        if (iitem) quantity = MathBN.div(quantity, iitem.required_quantity)
       }
 
       return {
